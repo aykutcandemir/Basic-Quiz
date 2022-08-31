@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="card-header">
+        <h3 id="title">Todo App</h3>
+        <ul >
+            <li class="task">
+                Gorev 1
+            </li>
+            <li class="task">
+                Gorev 2
+            </li>
+            <li class="task" id="task-list">
+                Gorev 3
+            </li>
+        </ul>
+    </div>
+
+    <div class="delete">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus aliquid magnam nulla iste dolor harum.</p>
+    </div>
+
+    
+
+
+    <script>
+        let sonuc;
+        sonuc = document.getElementById("title");
+        document.body.style.margin= "15px";
+        sonuc.style.fontSize = "35px";
+        sonuc.style.color = "blue";
+
+        
+
+        // MULTIPLE
+
+
+        let taskList = document.getElementsByClassName("task");
+
+        for(let task of taskList){
+            console.log(task);
+        }
+
+        taskList = document.getElementsByTagName("li");
+        for(let task of taskList){
+            console.log(task);
+        }
+
+        // CHILD ELEMENTS
+
+        sonuc = document.querySelector(".card-header").children[1].children[0];
+        console.log(sonuc);
+
+        // ADDING ELEMENTS
+
+        var gorev;
+        var gorevListesi = [
+            {id:1, gorevAdi: "Gorev 1"},
+            {id:2, gorevAdi: "Gorev 2"},
+            {id:3, gorevAdi: "Gorev 3"},
+            {id:4, gorevAdi: "Gorev 4"},
+        ];
+        
+        var ul = document.getElementById("task-list");
+        /*
+        for(let index of gorevListesi){
+            let li = `
+            <li class="task ">
+                <div>
+                    <input type="checkbox" id="${gorev.id}" class="form">
+                    <label for="${gorev.id}">${gorev.gorevAdi}</label>
+                </div>
+            </li>
+            `;
+
+            ul.insertAdjacentHTML("beforeend",li);
+        }
+        */
+
+
+        // DELETING
+
+        //document.querySelector(".delete").remove();
+
+
+        console.log(document.querySelector(".delete").children[0]);
+        document.querySelector(".delete").children[0].remove();
+
+
+    </script>
+</body>
+</html>
